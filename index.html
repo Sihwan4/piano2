@@ -1,24 +1,38 @@
 <html><head>
    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
   <style type ="text/css">
-div#side_A{
+div#side_0{
  width:100%;
  height:4em;
  background-color:skyblue;
  float:left;
  margin:1%;
 }
-#side_B{
+#side_1{
  width:100%;
  height:4em;
- background-color:ivory;
+ background-color:#85E3FF;
  float:left;
  margin:1%;
 }
-#side_C{
+#side_2{
  width:100%;
  height:4em;
  background-color:#CCE2CB;
+ float:left;
+ margin:1%;
+}
+#side_3{
+ width:100%;
+ height:4em;
+ background-color:#E7FFAC;
+ float:left;
+ margin:1%;
+}
+#side_4{
+ width:100%;
+ height:4em;
+ background-color:#BFFCC6;
  float:left;
  margin:1%;
 }
@@ -34,36 +48,37 @@ h3 {
   margin: 0.15em;
 }
 audio {
-  width: 80%;
+  width: 99%;
   height: 1.5em;
-  margin: 0.15em;
+  margin: 0.5%;
 }
  </style>
 </head>
 <body>
    <div id='pianist0'> <h1> Pianist - Sihwan Kim </h1> </div>
- 
-  <div id='side_A'>
-    <h3> Goldberg Variation - Aria </h3>
-  <audio controls="controls">
-    <source src="https://drive.google.com/uc?export=download&id=1Ab5aatvGgVgaqbngZytBNjFjwTYOQors">
-  </audio> 
- </div>
 
- 
-<div id='side_B'>
-   <h3> Goldberg Variation - Variation.1 </h3>
-  <audio controls="controls">
-    <source src="https://drive.google.com/uc?export=download&id=1AWuESe_qC87FGLK_HjhvEaj5qjnP8577">
-  </audio> 
- </div>
+<div id='ui0'></div>
 
- <div id='side_C'>
-   <h3> Goldberg Variation - Variation.2 </h3>
-  <audio controls="controls">
-    <source src="https://drive.google.com/uc?export=download&id=1Assn8laxgWd0kOoDhIoaXUrMb7ps2g01">
-  </audio> 
- </div>
+<script>
+
+document.getElementById("ui0").innerHTML = "ABC"
+var dbi = ["Goldberg Variation - Aria", "1Ab5aatvGgVgaqbngZytBNjFjwTYOQors",
+          "Goldberg Variation - Variation.1", "1AWuESe_qC87FGLK_HjhvEaj5qjnP8577",
+          "Goldberg Variation - Variation.2", "1Assn8laxgWd0kOoDhIoaXUrMb7ps2g01" ]
+var dbLength = dbi.length / 2 
+ 
+var hMM = ""
+for (i=0; i<dbLength ;i++){
+var colString = "side_" + String( (i+1  ) % 5 )
+var nameString = dbi[2 * i]
+var sourceString = dbi[2 * i + 1]
+var heColor = " <div id='" + colString  + "'> <h3> " 
+var heName = nameString + "</h3>"
+var heSource = '  <audio controls="controls"><source src="https://drive.google.com/uc?export=download&id= ' + sourceString + '"> </audio> </div>'
+ hMM = hMM + heColor + heName + heSource
+}
+document.getElementById("ui0").innerHTML = hMM
+</script>
 
 </body>
 </html>
