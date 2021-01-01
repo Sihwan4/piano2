@@ -75,7 +75,7 @@ var nameString = dbi[2 * i]
 var sourceString = dbi[2 * i + 1]
 var heColor = " <div id='" + colString  + "'> <h3> " 
 var heName = nameString + "</h3>"
-var heSource = '  <audio controls="controls"><source src="https://drive.google.com/uc?export=download&id= ' + sourceString + '"> </audio> </div>'
+var heSource = '  <audio controls="controls"><source src="https://drive.google.com/uc?export=download&id=' + sourceString + '"> </audio> </div>'
  hMM = hMM + heColor + heName + heSource
 }
 document.getElementById("ui0").innerHTML = hMM
